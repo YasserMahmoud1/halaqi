@@ -1,0 +1,6 @@
+# Copy this file to key.properties and fill with your real signing values.
+# Do not commit key.properties to source control.
+storePassword=CHANGE_ME
+keyPassword=CHANGE_ME
+keyAlias=upload
+storeFile=../upload-keystore.jks

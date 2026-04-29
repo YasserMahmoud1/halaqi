@@ -1,0 +1,61 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // ─────────────────────────────────────────────
+    //  RUN / DEBUG
+    // ─────────────────────────────────────────────
+    {
+      "name": "▶ Run (Debug)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "debug",
+      "args": [
+        "--dart-define=SUPABASE_URL=https://eqjkzufthjlmjvnzeeyj.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_8v_d2CG8zEefMjQf5pT78Q_wP-jfyH9"
+      ]
+    },
+    {
+      "name": "▶ Run (Profile)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "profile",
+      "args": [
+        "--dart-define=SUPABASE_URL=https://eqjkzufthjlmjvnzeeyj.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_8v_d2CG8zEefMjQf5pT78Q_wP-jfyH9"
+      ]
+    },
+    {
+      "name": "▶ Run (Release)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "release",
+      "args": [
+        "--dart-define=SUPABASE_URL=https://eqjkzufthjlmjvnzeeyj.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_8v_d2CG8zEefMjQf5pT78Q_wP-jfyH9"
+      ]
+    },
+
+    // ─────────────────────────────────────────────
+    //  BUILD — these launch the task from tasks.json
+    // ─────────────────────────────────────────────
+    {
+      "name": "📦 Build APK (Release)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "preLaunchTask": "Build APK (Release)",
+      "noDebug": true
+    },
+    {
+      "name": "📦 Build App Bundle (Release)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "preLaunchTask": "Build App Bundle (Release)",
+      "noDebug": true
+    }
+  ]
+}

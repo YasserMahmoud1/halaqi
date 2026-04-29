@@ -1,0 +1,99 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // ─────────────────────────────────────────────
+    //  BUILD APK
+    // ─────────────────────────────────────────────
+    {
+      "label": "Build APK (Release)",
+      "type": "shell",
+      "command": "flutter",
+      "args": [
+        "build",
+        "apk",
+        "--release",
+        "--dart-define=SUPABASE_URL=https://eqjkzufthjlmjvnzeeyj.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_8v_d2CG8zEefMjQf5pT78Q_wP-jfyH9"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+
+    // ─────────────────────────────────────────────
+    //  BUILD APP BUNDLE (for Google Play Store)
+    // ─────────────────────────────────────────────
+    {
+      "label": "Build App Bundle (Release)",
+      "type": "shell",
+      "command": "flutter",
+      "args": [
+        "build",
+        "appbundle",
+        "--release",
+        "--dart-define=SUPABASE_URL=https://eqjkzufthjlmjvnzeeyj.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=sb_publishable_8v_d2CG8zEefMjQf5pT78Q_wP-jfyH9"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+
+    // ─────────────────────────────────────────────
+    //  FLUTTER PUB GET
+    // ─────────────────────────────────────────────
+    {
+      "label": "Flutter Pub Get",
+      "type": "shell",
+      "command": "flutter",
+      "args": ["pub", "get"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+
+    // ─────────────────────────────────────────────
+    //  FLUTTER CLEAN + PUB GET
+    // ─────────────────────────────────────────────
+    {
+      "label": "Flutter Clean & Get",
+      "type": "shell",
+      "command": "flutter clean && flutter pub get",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+name: my_barber
+description: "Halaqi - Premium Barber Booking App"
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# version: 1.0.0
+
+environment:
+  sdk: ^3.10.0 
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.2.2
+  go_router: ^16.3.0
+  shared_preferences: ^2.5.4
+  pinput: ^5.0.2
+  flutter_screenutil: ^5.9.3
+  flutter_riverpod: ^3.0.3
+  supabase_flutter: ^2.12.0
+  lottie: ^3.3.2
+  geolocator: ^14.0.2
+  geocoding: ^3.0.0
+  dropdown_button2: ^2.3.9
+  json_annotation: ^4.9.0
+  intl: ^0.20.2
+  url_launcher: ^6.3.2
+  webview_flutter: ^4.10.0
+  flutter_launcher_icons: ^0.14.4
+  logger: ^2.6.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.13
+  json_serializable: ^6.8.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/onboarding/
+    - assets/svg/
+    - assets/login/
+    - assets/lottie/
+    - assets/logo/
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo/logo.png"
+  remove_alpha_ios: true

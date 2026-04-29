@@ -1,0 +1,27 @@
+﻿--------- beginning of crash
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: FATAL EXCEPTION: main
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: Process: com.halaqiappsa.halaqi, PID: 4613
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate activity ComponentInfo{com.halaqiappsa.halaqi/com.halaqiappsa.halaqi.MainActivity}: java.lang.ClassNotFoundException: Didn't find class "com.halaqiappsa.halaqi.MainActivity" on path: DexPathList[[zip file "/data/app/~~Ec36tEJGM4KOWp8LvM8vYw==/com.halaqiappsa.halaqi-d8E8youghf64vwFZOQeDhA==/base.apk"],nativeLibraryDirectories=[/data/app/~~Ec36tEJGM4KOWp8LvM8vYw==/com.halaqiappsa.halaqi-d8E8youghf64vwFZOQeDhA==/lib/x86_64, /data/app/~~Ec36tEJGM4KOWp8LvM8vYw==/com.halaqiappsa.halaqi-d8E8youghf64vwFZOQeDhA==/base.apk!/lib/x86_64, /system/lib64, /system_ext/lib64]]
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4186)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4467)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:222)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:133)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:103)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:80)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2823)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:248)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:338)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.halaqiappsa.halaqi.MainActivity" on path: DexPathList[[zip file "/data/app/~~Ec36tEJGM4KOWp8LvM8vYw==/com.halaqiappsa.halaqi-d8E8youghf64vwFZOQeDhA==/base.apk"],nativeLibraryDirectories=[/data/app/~~Ec36tEJGM4KOWp8LvM8vYw==/com.halaqiappsa.halaqi-d8E8youghf64vwFZOQeDhA==/lib/x86_64, /data/app/~~Ec36tEJGM4KOWp8LvM8vYw==/com.halaqiappsa.halaqi-d8E8youghf64vwFZOQeDhA==/base.apk!/lib/x86_64, /system/lib64, /system_ext/lib64]]
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:259)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateActivity(AppComponentFactory.java:95)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateActivity(CoreComponentFactory.java:44)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.Instrumentation.newActivity(Instrumentation.java:1443)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4173)
+02-27 22:39:16.391  4613  4613 E AndroidRuntime: 	... 13 more
