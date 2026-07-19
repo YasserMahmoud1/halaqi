@@ -15,15 +15,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Security: Dynamically create the .env file from GitHub Secrets
-      - name: Create .env file
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-        run: |
-          echo "SUPABASE_URL=$SUPABASE_URL" > .env
-          echo "SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY" >> .env
-
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
@@ -61,9 +52,15 @@ jobs:
           echo "keyAlias=$KEY_ALIAS" >> android/key.properties
           echo "storeFile=../app/upload-keystore.jks" >> android/key.properties
 
-      # Build the signed production APK
+      # Build the signed production APK using safe dart-define mapping
       - name: Build APK
-        run: flutter build apk --release
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          flutter build apk --release \
+            --dart-define=SUPABASE_URL="$SUPABASE_URL" \
+            --dart-define=SUPABASE_ANON_KEY="$SUPABASE_ANON_KEY"
 
       # Upload the finished APK to Cloudflare R2
       - name: Upload APK to Cloudflare R2
