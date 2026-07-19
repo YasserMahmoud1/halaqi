@@ -73,5 +73,5 @@ jobs:
           AWS_DEFAULT_REGION: auto
         run: |
           aws s3 cp build/app/outputs/flutter-apk/app-release.apk \
-          s3://${{ secrets.R2_BUCKET_NAME }}/app-v${{ github.event.inputs.version_name }}-b${{ github.run_number }}.apk \
+          s3://${{ secrets.R2_BUCKET_NAME }}/Halaqi-v${{ github.event.inputs.version_name }}.apk \
           --endpoint-url ${{ secrets.R2_ENDPOINT_URL }}
