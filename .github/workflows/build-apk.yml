@@ -33,14 +33,14 @@ jobs:
       - name: Run build_runner
         run: dart run build_runner build --delete-conflicting-outputs
 
-      # Security: Decode the Base64 Keystore back into a .jks file
+      # Security: Decode the Base64 Keystore string back into a real binary file
       - name: Decode Keystore
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
         run: |
-          echo $KEYSTORE_BASE64 | base64 --decode > android/app/upload-keystore.jks
+          echo "$KEYSTORE_BASE64" | base64 --decode > android/app/upload-keystore.jks
 
-      # Security: Dynamically create the key.properties file
+      # Security: Dynamically create key.properties using safe env variables
       - name: Create key.properties
         env:
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
@@ -56,7 +56,7 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
-      # Upload the finished APK to Cloudflare R2 (or any S3 compatible bucket)
+      # Upload the finished APK to Cloudflare R2
       - name: Upload APK to Cloudflare R2
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
