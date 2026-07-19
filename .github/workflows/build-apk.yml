@@ -2,7 +2,6 @@ name: Manual APK Build & R2 Upload
 
 on:
   workflow_dispatch:
-    # Optional inputs you can fill out when clicking "Run workflow"
     inputs:
       version_name:
         description: 'Version Name (e.g., 1.0.0)'
@@ -30,16 +29,18 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      # Executes code generation before compiling the app
+      - name: Run build_runner
+        run: dart run build_runner build --delete-conflicting-outputs
+
       - name: Build APK
         run: flutter build apk --release
 
       - name: Upload APK to Cloudflare R2
         env:
-          # Pulling credentials securely from GitHub Secrets
           AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: auto
-        # Renames the file during upload to include your version input and run number
         run: |
           aws s3 cp build/app/outputs/flutter-apk/app-release.apk \
           s3://${{ secrets.R2_BUCKET_NAME }}/app-v${{ github.event.inputs.version_name }}-b${{ github.run_number }}.apk \
